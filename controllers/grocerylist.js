@@ -2,10 +2,14 @@ import grocerySchema from '../models/grocerylist'
 
 export const getGroceryList = async (req, res) => {
     grocerySchema.find()
-        .then((food) => res.json(food))
+        .then((grocery) => res.json(grocery))
         .catch((err) => console.log(err))
 }
-
+export const getGroceryItem = async (req, res) => {
+    grocerySchema.findById({_id: req.params.id})
+        .then((grocery) => res.json(grocery))
+        .catch((err) => console.log(err))
+}
 export const postGroceryList = async (req, res) => {
     const newGrocerySchema = new grocerySchema({
             item: req.body.item,

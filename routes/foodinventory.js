@@ -1,9 +1,11 @@
 import express from 'express'
 
-import { getFoodInventory, postFoodInventory, updateFoodInventory, deleteFoodInventory } from '../controllers/foodinventory'
+import { getFoodInventory, postFoodInventory, updateFoodInventory, deleteFoodInventory, getFoodItem } from '../controllers/foodinventory'
 const router = express.Router()
 
 router.get('/foodinventory', getFoodInventory)
+
+router.get('/foodinventory/:id', getFoodItem)
 
 router.post('/foodinventory/add', postFoodInventory)
 

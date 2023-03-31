@@ -1,8 +1,11 @@
 import express from 'express'
-import { getGroceryList, postGroceryList, updateGroceryList, deleteGroceryList } from '../controllers/grocerylist'
+import { getGroceryList, postGroceryList, updateGroceryList, deleteGroceryList, getGroceryItem } from '../controllers/grocerylist'
+
 const router = express.Router()
 
 router.get('/grocerylist', getGroceryList)
+
+router.get('/grocerylist/:id', getGroceryItem)
 
 router.post('/grocerylist/add', postGroceryList)
 
