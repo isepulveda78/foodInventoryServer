@@ -1,5 +1,5 @@
 import foodSchema from '../models/foodinventory'
-import moment from 'moment'
+
 export const getFoodInventory = async (req, res) => {
     foodSchema.find()
         .then((food) => res.json(food))
